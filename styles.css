@@ -1,0 +1,21 @@
+/* .game-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333;
+    width: 360px;
+} */
+.tic-tac-toe {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333;
+    width: 360px;
+}
+
+
+.tic-tac-toe > img {
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
