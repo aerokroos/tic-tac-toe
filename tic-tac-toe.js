@@ -7,6 +7,8 @@ let computer = "";
 let o = document.getElementById('O');
 let x =  document.getElementById('X');
 let option;
+let playerWinner = "You";
+let computerWinner = "Computer";
 
 function chooseX() {
     playerValue = x
@@ -19,21 +21,26 @@ function chooseO() {
 }
 
 function putChoose(playerPosition) {
-    if (player === "X") {
+    if (board[playerPosition] === "X") {
+        alert("Busyy!!!!!");
+    } else if (player === "X") {
         console.log(playerPosition);
         option = document.getElementById(playerPosition);
         option.src = "img/x.png";
         board[playerPosition] = "X";
-        console.log(board); 
         computer ="O";
+        checkX(playerWinner);
         computerIsPlaying(computer);
-    
+    }
+    if (board[playerPosition] === "O") {
+        alert("Busyy!!!!!");
     } else if (player === "O") {
         option = document.getElementById(playerPosition);
         option.src = "img/circle.jpg";
         board[playerPosition] = "O";
         console.log(board);
         computer = "X";
+        checkO(playerWinner);
         computerIsPlaying(computer);
     }
 }
@@ -50,7 +57,7 @@ function computerIsPlaying(computer) {
             let option = document.getElementById(computerPosition);
             option.src = "img/x.png";
             board[computerPosition] = "X";
-            checkWinner();
+            checkX(computerWinner);
         } else {
             computerIsPlaying(computer);
         }
@@ -59,38 +66,38 @@ function computerIsPlaying(computer) {
             let option = document.getElementById(computerPosition);
             option.src = "img/circle.jpg";
             board[computerPosition] = "O";
-            checkWinner();
+            checkO(computerWinner);
         } else {
             computerIsPlaying(computer);
         }
     }
 }
 
-function checkWinner(){
-    if (player === "X") {
-        if (board[0] == "X" && board[1] == "X" && board[2] == "X"){
-            console.log("You WON!!!");
-        } else if (board[3] == "X" && board[4] == "X" && board[5] == "X"){
-            console.log("You WON!!!");
-        } else if (board[6] == "X" && board[7] == "X" && board[8] == "X"){
-            console.log("You WON!!!");
-        } else if (board[2] == "X" && board[4] == "X" && board[6] == "X") {
-            console.log("You WON!!!");
-        } else if (board[0] == "X" && board[4] == "X" && board[8] == "X") {
-            console.log("You WON!!!");
-        }
-    } else if (player === "O") {
-        if (board[0] == "O" && board[1] == "O" && board[2] == "O"){
-            console.log("You WON!!!");
-        } else if (board[3] == "O" && board[4] == "O" && board[5] == "X"){
-            console.log("You WON!!!");
-        } else if (board[6] == "O" && board[7] == "O" && board[8] == "O"){
-            console.log("You WON!!!");
-        } else if (board[2] == "O" && board[4] == "O" && board[6] == "O") {
-            console.log("You WON!!!");
-        } else if (board[0] == "O" && board[4] == "X" && board[8] == "O") {
-            console.log("You WON!!!");
-        }
+function checkX(winner){
+    if (board[0] == "X" && board[1] == "X" && board[2] == "X"){
+        console.log("the winner is: ", winner);
+    } else if (board[3] == "X" && board[4] == "X" && board[5] == "X"){
+        console.log("the winner is: ", winner);
+    } else if (board[6] == "X" && board[7] == "X" && board[8] == "X"){
+        console.log("the winner is: ", winner);
+    } else if (board[2] == "X" && board[4] == "X" && board[6] == "X") {
+        console.log("the winner is: ", winner);
+    } else if (board[0] == "X" && board[4] == "X" && board[8] == "X") {
+        console.log("the winner is: ", winner);
+    }
+}
+
+function checkO(winner) {
+    if (board[0] == "O" && board[1] == "O" && board[2] == "O"){
+        console.log("the winner is: ", winner);
+    } else if (board[3] == "O" && board[4] == "O" && board[5] == "O"){
+        console.log("the winner is: ", winner);
+    } else if (board[6] == "O" && board[7] == "O" && board[8] == "O"){
+        console.log("the winner is: ", winner);
+    } else if (board[2] == "O" && board[4] == "O" && board[6] == "O") {
+        console.log("the winner is: ", winner);
+    } else if (board[0] == "O" && board[4] == "O" && board[8] == "O") {
+        console.log("the winner is: ", winner);
     }
 }
 
