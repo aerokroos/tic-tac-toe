@@ -3,10 +3,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <title>Tic Tac Toe</title>
 </head>
 <body>
     <div class="game-container">
+
+        <div class="header-box">
+            <h2>Tic Tac Toe Game</h2>
+            <h3 id="result"></h3>
+        </div>
 
         <div class="tic-tac-toe">
             <img id="0" src="img/white.webp" onclick="putChoose(0)">
@@ -22,17 +29,16 @@
             <img id="8" src="img/white.webp" onclick="putChoose(8)">
         </div>
 
-        
-
-        <div class="menu-box">
+        <div id="menu" class="menu-box">
             <h2>Please Choose one</h2>
-            <button id="X" onclick='chooseX()'>X</button>
-            <button id="O" onclick='chooseO()'>O</button>
+            <button class="btn btn-success" id="X" onclick='chooseX()'>X</button>
+            <button class="btn btn-success" id="O" onclick='chooseO()'>O</button>
         </div>
     </div>
 
 
 
     <script src="tic-tac-toe.js"></script>
+    <script src="animations.js"></script>
 </body>
 </html>
